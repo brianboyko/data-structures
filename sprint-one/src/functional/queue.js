@@ -1,27 +1,27 @@
 var Queue = function(){
+  console.log("quote new queue");
   var someInstance = {};
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var size = 0;
+  var tail = 0;
+  var head = 0;
   // Implement the methods below
 
   someInstance.enqueue = function(value){
-    storage[size] = value;
-    size++;
+    storage[tail] = value;
+    tail++;
   };
 
   someInstance.dequeue = function(){
-    size && size--;
-    var output = storage[0];
-    for(var key in storage){
-      storage[key] = storage[key+1];
-    }
+    var output = storage[head];
+    head++;
+
     return output;
   };
 
   someInstance.size = function(){
-    return size;
+    return tail - head;
   };
 
   return someInstance;
