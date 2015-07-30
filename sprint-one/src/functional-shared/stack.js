@@ -35,7 +35,9 @@ var stackMethods = {
     this['mySize']++;
   },
   pop: function() {
-    if (this['mySize'] > 0){this['mySize']--;}
+    if (this['mySize'] > 0) {
+      this['mySize']--;
+    }
     return this[this['mySize']];
   },
   size: function() {
@@ -43,5 +45,4 @@ var stackMethods = {
   }
 
 };
-
 // FUN FACT:  this[size] is equal to this[0], this[1], etc. this.size = 0, 1, etc.
