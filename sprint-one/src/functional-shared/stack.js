@@ -1,4 +1,4 @@
-/* 
+/*
 
 Requirements:
   No arrays! Instead, use an object with numeric keys.
@@ -20,8 +20,28 @@ Example: https://github.com/makersquare/giraffeMaker/blob/master/src/giraffeExte
 var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
+  var stack = {};
+  stack.mySize = 0;
+
+  _.extend(stack, stackMethods);
+
+
+  return stack;
 };
 
-var stackMethods = {};
+var stackMethods = {
+  push: function(value) {
+    this[this['mySize']] = value;
+    this['mySize']++;
+  },
+  pop: function() {
+    if (this['mySize'] > 0){this['mySize']--;}
+    return this[this['mySize']];
+  },
+  size: function() {
+    return this['mySize'];
+  }
 
+};
 
+// FUN FACT:  this[size] is equal to this[0], this[1], etc. this.size = 0, 1, etc.
