@@ -1,4 +1,4 @@
-/* 
+/*
 
 Requirements:
   No arrays! Instead, use an object with numeric keys.
@@ -16,24 +16,24 @@ Don't:
 */
 
 
-var Stack = function(){
+var Stack = function() {
   var someInstance = {};
 
   // Use an object with numeric keys to store values
   var storage = {};
   var size = 0;
   // Implement the methods below
-  someInstance.push = function(value){
+  someInstance.push = function(value) {
     storage[size] = value;
     size++;
   };
 
-  someInstance.pop = function(){
+  someInstance.pop = function() {
     size && size--;
     return storage[size];
   };
 
-  someInstance.size = function(){
+  someInstance.size = function() {
     return size;
   };
 

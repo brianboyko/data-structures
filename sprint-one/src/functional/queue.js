@@ -1,4 +1,4 @@
-/* 
+/*
 
 Requirements:
   No arrays! Instead, use an object with numeric keys.
@@ -17,29 +17,28 @@ Don't:
 
 
 
-var Queue = function(){
-  console.log("quote new queue");
+var Queue = function() {
   var someInstance = {};
-
   // Use an object with numeric keys to store values
   var storage = {};
   var tail = 0;
   var head = 0;
-  // Implement the methods below
 
-  someInstance.enqueue = function(value){
+  // Implement the methods below
+  someInstance.enqueue = function(value) {
     storage[tail] = value;
     tail++;
   };
 
-  someInstance.dequeue = function(){
-    var output = storage[head];
-    head++;
-
+  someInstance.dequeue = function() {
+    var output = storage[head]; // -bb Why does this not work without declaring an output?
+    if (storage[head]) {
+      head++
+    }
     return output;
   };
 
-  someInstance.size = function(){
+  someInstance.size = function() {
     return tail - head;
   };
 
