@@ -1,3 +1,22 @@
+/* 
+
+Requirements:
+  No arrays! Instead, use an object with numeric keys.
+  Pass all the tests (open SpecRunner.html in a browser).
+
+Functional instantiation: a simple "maker" pattern
+Do:
+  Work within the src/functional/ folder.
+  Define all functions and properties within the maker function.
+Don't:
+  Use the keyword new, the keyword this, or any prototype chains.
+  Capitalize the maker function name.
+  Example: The provided classes Stack and Queue already follow this pattern
+
+*/
+
+
+
 var Queue = function(){
   console.log("quote new queue");
   var someInstance = {};
@@ -26,3 +45,5 @@ var Queue = function(){
 
   return someInstance;
 };
+
+
