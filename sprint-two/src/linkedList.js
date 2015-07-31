@@ -3,13 +3,37 @@ var LinkedList = function(){  // -bb this is a class!
   list.head = null;
   list.tail = null;
 
-  list.addToTail = function(value){
+  list.addToTail = function(value){ // --bb takes a value and adds it to the end of the list.
+    myNode = new Node(value);
+    if(list.head === null){
+      list.head = myNode;
+      list.tail = myNode;
+    } else {
+      var oldTail = list.tail;
+      list.tail = myNode;
+      oldTail.next = list.tail;
+    }
   };
 
-  list.removeHead = function(){
+  list.removeHead = function(){ // --bb removes first node from the list, and returns it's value.
+    var output = list.head.value;
+    list.head = list.head.next;
+
+     return output;
   };
 
-  list.contains = function(target){
+  list.contains = function(target){ //--bb returns boolean reflecting whether or not the passed-in value is in the linked list
+    var flag = false;
+    var searchNode = list.head;
+    do{
+      if(searchNode.value === target){
+        flag = true;
+      } else {
+        searchNode = searchNode.next;
+      }
+    } while(!flag || searchNode.tail === null){
+
+    }
   };
 
   return list;
