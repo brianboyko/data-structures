@@ -1,4 +1,4 @@
-/* 
+/*
 
 Prototypal instantiation: using Object.create
 Do:
@@ -14,8 +14,28 @@ Don't:
 var Queue = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
+  var queue = Object.create(queueMethods);
+  queue.head = 0;
+  queue.tail = 0;
+
+  return queue;
 };
 
-var queueMethods = {};
+var queueMethods = {
+  enqueue: function(value) {
+    this[this.tail] = value;
+    this.tail++;
+  },
 
+  dequeue: function() {
+    var output = this[this.head];
+    if (this.tail - this.head > 0){this.head++};
+
+    return output;
+  },
+
+  size: function() {
+    return this.tail - this.head;
+  }
+};
 
