@@ -10,12 +10,16 @@ Don't:
   Return the instance explicitly
 Example: https://github.com/makersquare/giraffeMaker/blob/master/src/giraffePseudoClassical.js
 */
+/// maybe this might help: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+/// maybe class Stack, not var stack? ???
 
 var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   this.mySize = 0;
   this.stackMethods = stackMethods; // ?
+
+  // what if we did this:   this.storage = {}; -- this would remove the this.this.mySize problem, by using this.storage[mySize]
 };
 
 
@@ -23,6 +27,7 @@ var Stack = function() {
 
 var stackMethods = {
   push: function(value) {
+    // would this.storage[mySize] work?
     this.this.mySize = value;
     this.mySize++;
   },
@@ -36,4 +41,5 @@ var stackMethods = {
   }
 }
 
+// test uses the keyword new - but maybe we don't use the keyword new... delete this line?
 var stack = new Stack;
