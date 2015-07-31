@@ -1,4 +1,4 @@
-var LinkedList = function(){
+var LinkedList = function(){  // -bb this is a class!
   var list = {};
   list.head = null;
   list.tail = null;
@@ -15,7 +15,7 @@ var LinkedList = function(){
   return list;
 };
 
-var Node = function(value){
+var Node = function(value){  // --bb this is a class!
   var node = {};
 
   node.value = value;
