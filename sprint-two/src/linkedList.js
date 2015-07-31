@@ -24,16 +24,18 @@ var LinkedList = function(){  // -bb this is a class!
 
   list.contains = function(target){ //--bb returns boolean reflecting whether or not the passed-in value is in the linked list
     var flag = false;
+    var breaker = false;
     var searchNode = list.head;
     do{
       if(searchNode.value === target){
         flag = true;
       } else {
-        searchNode = searchNode.next;
+        if(searchNode.next === null){ breaker = true;}
+        searchNode = searchNode.next; // -- bb added
       }
-    } while(!flag || searchNode.tail === null){
+    } while(!flag && !breaker) // -- bb changed from "tail" to "next"
 
-    }
+    return flag; // -- bb added
   };
 
   return list;
