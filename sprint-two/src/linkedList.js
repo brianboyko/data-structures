@@ -52,4 +52,7 @@ var Node = function(value){  // --bb this is a class!
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ .addToTail: O(1)
+ .removeHead: O(1)
+ .contains: O(n)
  */
