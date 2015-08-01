@@ -65,9 +65,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
    var removeIt = function (collection, it){
      for(var i = 0; i < collection.length; i++){
        if (collection[i] === it){
-         console.log(collection);
          collection = collection.slice(0, i).concat(collection.slice(i+1));  // -- bb this was where the problem was, I was using concat incorrectly
-         console.log(collection);
        }
      }
      return collection;
@@ -90,6 +88,9 @@ Graph.prototype.forEachNode = function(cb){
   // for var key in this.storage?
     // _.each() ??
     // _.each(this.storage, cb)?
+    for(var key in this.storage){
+      cb(key);
+    }
 
 };
 
