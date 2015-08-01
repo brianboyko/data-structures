@@ -46,6 +46,7 @@ describe('graph', function() {
     graph.removeEdge('penguins', 'puppies');
     expect(graph.hasEdge('apples', 'satsumas')).to.equal(true);
     expect(graph.hasEdge('penguins', 'puppies')).to.equal(false);
+
   });
 
   it('should execute a callback on each node in the graph', function() {
